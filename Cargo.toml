@@ -1,0 +1,17 @@
+[package]
+name = "fast_log"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+core_affinity = "0.8"
+rtrb = "0.2.3"
+snmalloc-rs = "0.3.3"
+time = { version = "0.3.20", features = ["formatting"] }
+
+[profile.release]
+lto = true
+opt-level = 3
+codegen-units = 1
